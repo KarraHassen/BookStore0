@@ -1,6 +1,10 @@
 package model;
 
-import java.util.Date;
+import java.sql.SQLException;
+import java.sql.Date;
+
+
+import connection.Connectivity;
 
 
 
@@ -18,8 +22,8 @@ public class Main {
 		
 		
 		
-		Livre l = new Livre(0,"Look back in Anger " , "John Osborne", 50);
-		Livre l1 = new Livre(1, "the great Gatsby", "Scott Fitzgerald", 50);
+		Livre l = new Livre(0,"Look back in Anger " , "John Osborne", 50, d);
+		Livre l1 = new Livre(1, "the great Gatsby", "Scott Fitzgerald", 50, d);
 		
 		lc1.setLivre(l);
 		lc2.setLivre(l1);
@@ -34,6 +38,27 @@ public class Main {
 		
 		double k = c0.CalPrixTot();
 		System.out.println("le prix totlae pour cette commande est " +k);
+		
+		
+		
+		try {
+			try {
+				Livre b1 = new Livre (0,"Look back in Anger " , "John Osborne", 50, d);
+				Connectivity c =new Connectivity()	;
+				c.add(b1);
+				System.out.println(c.getAll());
+			} catch (SQLException e) {
+				
+				e.printStackTrace();
+			}
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		 Commande c1= new Commande(0, d);
+		 
+		
 		
 		
 		

@@ -1,19 +1,30 @@
 package model;
 
+import java.util.Date;
+
 public class Livre {
 
 	private int idl;
 	private String titrel, auteurl;
 	private double prixuni;
+	private Date releasedate; 
 	
 	
-	public Livre(int idl, String titrel, String auteurl, double prixuni) {
+	public Livre(int idl, String titrel, String auteurl, double prixuni, Date releasedate) {
 		super();
 		this.idl = idl;
 		this.titrel = titrel;
 		this.auteurl = auteurl;
 		this.prixuni = prixuni;
+		this.releasedate = releasedate;
 	}
+	
+
+
+	public Livre() {
+		super();
+	}
+
 
 
 	public int getIdl() {
@@ -55,11 +66,29 @@ public class Livre {
 		this.prixuni = prixuni;
 	}
 
+	
+
+	public Date getReleasedate() {
+		return releasedate;
+	}
+
+
+	public void setReleasedate(Date releasedate) {
+		this.releasedate = releasedate;
+	}
+
 
 	@Override
 	public String toString() {
-		return "Livre [idl=" + idl + ", titrel=" + titrel + ", auteurl=" + auteurl + ", prixuni=" + prixuni + "]";
+		return "Livre [idl=" + idl + ", titrel=" + titrel + ", auteurl=" + auteurl + ", prixuni=" + prixuni
+				+ ", releasedate=" + releasedate + "]";
 	}
+
+	
+	
+
+	
+	
 	
 	
 	
